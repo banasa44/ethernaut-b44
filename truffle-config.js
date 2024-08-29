@@ -83,13 +83,13 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           MNEMONIC,
-          `https://sepolia.infura.io/v3/${PROJECT_ID}`
+          `https://eth-sepolia.g.alchemy.com/v2/${PROJECT_ID}`
         ),
       network_id: 11155111, // Sepolia network id
-      gas: 4500000, // Gas limit, adjust based on contract size
-      gasPrice: 10000000000, // Gas price in wei (10 gwei)
-      confirmations: 2, // Number of confirmations to wait between deployments
-      timeoutBlocks: 200, // Number of blocks before a deployment times out
+      // gas: 4500000, // Gas limit, adjust based on contract size
+      // gasPrice: 10000000000, // Gas price in wei (10 gwei)
+      // confirmations: 2, // Number of confirmations to wait between deployments
+      // timeoutBlocks: 200, // Number of blocks before a deployment times out
       skipDryRun: true, // Skip the dry run before migrations
     },
   },
