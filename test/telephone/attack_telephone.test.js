@@ -10,8 +10,8 @@ contract("Attack", (accounts) => {
   const attacker = accounts[0];
 
   before(async () => {
-    telephoneInstance = await Telephone.deployed();
-    attackInstance = await Attack.deployed();
+    telephoneInstance = await Telephone.new();
+    attackInstance = await Attack.new(telephoneInstance.address);
   });
 
   it("should deploy the Telephone and Attack contracts", async () => {

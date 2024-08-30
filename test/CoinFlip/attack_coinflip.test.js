@@ -6,8 +6,8 @@ contract("Attack", (accounts) => {
   let attackInstance;
 
   before(async () => {
-    coinFlipInstance = await CoinFlip.deployed();
-    attackInstance = await Attack.deployed();
+    coinFlipInstance = await CoinFlip.new();
+    attackInstance = await Attack.new(coinFlipInstance.address);
   });
 
   it("should deploy the CoinFlip and Attack contracts", async () => {
