@@ -11,7 +11,10 @@ contract("Attack", (accounts) => {
 
   before(async () => {
     forceInstance = await Force.new();
-    attackInstance = await Attack.new(forceInstance.address);
+    attackInstance = await Attack.new(forceInstance.address, {
+      from: accounts[0], // Ensure to specify the deploying account if needed
+      value: web3.utils.toWei("0.003", "ether"), // Send 0.003 ETH
+    });
   });
 
   it("should deploy the Force and Attack contracts", async () => {
@@ -19,9 +22,9 @@ contract("Attack", (accounts) => {
     assert(attackInstance.address !== "", "Attack contract not deployed");
   });
 
-  it("should sent ETH to Force contract", async () => {
+  it("should send ETH to Force contract", async () => {
     tx = await attackInstance.attack();
-    balance = await forceInstance.balance();
+    const balance = await web3.eth.getBalance(forceInstance.address);
     assert.equal(balance, value, "ETH hadn't arrived to Force contract");
   });
 });
