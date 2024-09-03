@@ -17,7 +17,6 @@ module.exports = async function (deployer, network, accounts) {
   }
   // Deploy the Attack contract with 0.003 ETH
   await deployer.deploy(Attack, forceAddress, {
-    from: accounts[0], // Ensure to specify the deploying account if needed
     value: web3.utils.toWei("0.003", "ether"), // Send 0.003 ETH
   });
 };
