@@ -1,9 +1,6 @@
 const Force = artifacts.require("Force");
 const Attack = artifacts.require("AttackForce");
 
-// const accounts = await web3.eth.getAccounts();
-// const attacker = accounts[0];
-
 contract("Attack", (accounts) => {
   let forceInstance;
   let attackInstance;

@@ -1,9 +1,6 @@
 const Telephone = artifacts.require("Telephone");
 const Attack = artifacts.require("AttackTelephone");
 
-// const accounts = await web3.eth.getAccounts();
-// const attacker = accounts[0];
-
 contract("Attack", (accounts) => {
   let telephoneInstance;
   let attackInstance;
