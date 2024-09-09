@@ -13,8 +13,8 @@ module.exports = async function (callback) {
     console.log("Crafted gateKey:", gateKey);
 
     // Set up initial gas values based on previous tests
-    const minGas = 24998;
-    const maxGas = 25010;
+    const minGas = 33180;
+    const maxGas = 33200;
     let correctGasAmount = 0;
 
     // Focused range around the known working gas value from testing
